@@ -1,27 +1,31 @@
--- Modify animals table
+/* Database schema to keep the structure of the entire database. */
+
 CREATE TABLE animals (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    date_of_birth DATE,
-    escape_attempts INTEGER,
-    neutered BOOLEAN,
-    weight_kg DECIMAL(10, 2),
-    species_id INTEGER,
-    owner_id INTEGER,
-    FOREIGN KEY (species_id) REFERENCES species(id),
-    FOREIGN KEY (owner_id) REFERENCES owners(id)
+    id serial PRIMARY KEY,
+    name varchar(255),
+    date_of_birth date,
+    escape_attempts integer,
+    neutered boolean,
+    weight_kg decimal(10, 2)
 );
 
+ALTER TABLE animals ADD COLUMN species varchar(255);
 
--- Create owners table
+
 CREATE TABLE owners (
-    id SERIAL PRIMARY KEY,
-    full_name VARCHAR(255),
-    age INTEGER
+    id serial PRIMARY KEY,
+    full_name varchar(255),
+    age integer
 );
-
--- Create species table
 CREATE TABLE species (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    id serial PRIMARY KEY,
+    name varchar(255)
 );
+ALTER TABLE animals
+ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
+ALTER TABLE animals
+DROP COLUMN species;
+ALTER TABLE animals
+ADD COLUMN species_id integer REFERENCES species(id);
+ALTER TABLE animals
+ADD COLUMN owner_id integer REFERENCES owners(id);
