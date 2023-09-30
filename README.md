@@ -32,7 +32,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-Tech Stack 
 The tech stack used in this project includes.
 
 PostgreSQL
