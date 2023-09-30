@@ -1,14 +1,11 @@
 /* Populate database with sample data. */
 
--- Inserting Agumon's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Agumon', '2020-02-03', 0, true, 10.23);
 
--- Inserting Gabumon's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Gabumon', '2018-11-15', 2, true, 8);
 
--- Inserting Pikachu's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Pikachu', '2021-01-07', 1, false, 15.04);
 
@@ -16,17 +13,12 @@ VALUES ('Pikachu', '2021-01-07', 1, false, 15.04);
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg)
 VALUES ('Devimon', '2017-05-12', 5, true, 11);
 
-
-
--- Inserting Charmander's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg, species)
 VALUES ('Charmander', '2020-02-08', 0, false, -11, 'Unknown');
 
--- Inserting Plantmon's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg, species)
 VALUES ('Plantmon', '2021-11-15', 2, true, -5.7, 'Unknown');
 
--- Inserting Squirtle's data
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg, species)
 VALUES ('Squirtle', '1993-04-02', 3, false, -12.13, 'Unknown');
 
@@ -78,18 +70,12 @@ SET owner_id = (
     END
 );
 
-
-
-
--- Vet William Tatcher
 INSERT INTO vets (name, age, date_of_graduation)
 VALUES ('William Tatcher', 45, '2000-04-23');
 
--- Vet Maisy Smith
 INSERT INTO vets (name, age, date_of_graduation)
 VALUES ('Maisy Smith', 26, '2019-01-17');
 
--- Vet Stephanie Mendez
 INSERT INTO vets (name, age, date_of_graduation)
 VALUES ('Stephanie Mendez', 64, '1981-05-04');
 
@@ -98,7 +84,6 @@ INSERT INTO vets (name, age, date_of_graduation)
 VALUES ('Jack Harkness', 38, '2008-06-08');
 
 
--- Vet William Tatcher specializes in Pokemon
 INSERT INTO specializations (vet_id, species_id)
 VALUES (
     (SELECT id FROM vets WHERE name = 'William Tatcher'),
@@ -112,14 +97,12 @@ VALUES (
     (SELECT id FROM species WHERE name = 'Digimon')
 );
 
--- Vet Stephanie Mendez also specializes in Pokemon
 INSERT INTO specializations (vet_id, species_id)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),
     (SELECT id FROM species WHERE name = 'Pokemon')
 );
 
--- Vet Jack Harkness specializes in Digimon
 INSERT INTO specializations (vet_id, species_id)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Jack Harkness'),
@@ -127,7 +110,6 @@ VALUES (
 );
 
 
--- Agumon visited William Tatcher on May 24th, 2020
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'William Tatcher'),
@@ -143,7 +125,6 @@ VALUES (
     '2020-07-22'
 );
 
--- Gabumon visited Jack Harkness on Feb 2nd, 2021
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Jack Harkness'),
@@ -167,7 +148,6 @@ VALUES (
     '2020-03-08'
 );
 
--- Pikachu visited Maisy Smith on May 14th, 2020
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Maisy Smith'),
@@ -175,7 +155,6 @@ VALUES (
     '2020-05-14'
 );
 
--- Devimon visited Stephanie Mendez on May 4th, 2021
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),
@@ -183,7 +162,6 @@ VALUES (
     '2021-05-04'
 );
 
--- Charmander visited Jack Harkness on Feb 24th, 2021
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Jack Harkness'),
@@ -191,7 +169,6 @@ VALUES (
     '2021-02-24'
 );
 
--- Plantmon visited Maisy Smith on Dec 21st, 2019
 INSERT INTO visits (vet_id, animal_id, visit_date)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Maisy Smith'),
