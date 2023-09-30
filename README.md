@@ -33,8 +33,7 @@
 ### Tech Stack <a name="tech-stack"></a>
 
 The tech stack used in this project includes.
-
-PostgreSQL
+Postgres
 Database
 
 <details>
