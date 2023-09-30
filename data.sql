@@ -81,7 +81,6 @@ VALUES (
     (SELECT id FROM species WHERE name = 'Pokemon')
 );
 
--- Vet Stephanie Mendez specializes in Digimon and Pokemon
 INSERT INTO specializations (vet_id, species_id)
 VALUES (
     (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),
