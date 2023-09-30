@@ -1,5 +1,3 @@
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -43,7 +41,6 @@ Database
   </ul>
 </details>
 
-<!-- Features -->
 ### Key Features <a name="key-features"></a>
 
 - **[Populate Animals table with values]**
@@ -62,7 +59,7 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-Install postgresql
+Install PostgreSQL
 
 ### Setup
 
