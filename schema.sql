@@ -53,9 +53,3 @@ CREATE TABLE visits (
     UNIQUE (vet_id, animal_id, visit_date)
 );
 
-CREATE TABLE vets(  
-    id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-   Animal_Name varchar(100) not null,
-    age int not NULL,
-    date_of_graduation date not null
-);
